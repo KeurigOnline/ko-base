@@ -144,3 +144,38 @@ function ko_base_front_page_fallback( string $content ): string {
     return $content;
 }
 add_filter( 'the_content', 'ko_base_front_page_fallback', 5 );
+
+/**
+ * Auto-enqueue interactivity scripts from assets/js/interactivity/
+ */
+add_action('wp_enqueue_scripts', function() {
+    $dir = get_template_directory() . '/assets/js/interactivity/';
+    $url = get_template_directory_uri() . '/assets/js/interactivity/';
+
+    if (!is_dir($dir)) return;
+
+    foreach (glob($dir . '*.js') as $script) {
+        $handle = 'ko-' . pathinfo($script, PATHINFO_FILENAME);
+        wp_enqueue_script_module(
+            $handle,
+            $url . basename($script),
+            ['@wordpress/interactivity'],
+            filemtime($script)
+        );
+    }
+});
+
+/**
+ * Enqueue interactivity component styles.
+ */
+add_action('wp_enqueue_scripts', function() {
+    $css = get_template_directory() . '/assets/css/interactivity.css';
+    if (file_exists($css)) {
+        wp_enqueue_style(
+            'ko-interactivity',
+            get_template_directory_uri() . '/assets/css/interactivity.css',
+            [],
+            filemtime($css)
+        );
+    }
+});
