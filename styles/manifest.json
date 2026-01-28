@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "styles": [
+    {
+      "id": "bold",
+      "name": "Bold Dark",
+      "description": "High contrast dark theme with bright neon accents. Great for tech startups, creative agencies, and modern brands.",
+      "style": "bold",
+      "tags": ["dark", "high-contrast", "tech", "modern", "striking", "neon"],
+      "preview": {
+        "base": "#0a0a0a",
+        "contrast": "#ffffff",
+        "primary": "#00ff88"
+      },
+      "fonts": {
+        "heading": "Inter",
+        "body": "Inter"
+      }
+    },
+    {
+      "id": "soft",
+      "name": "Soft Pastels",
+      "description": "Muted pastel colors with gentle contrasts and elegant serif headings. Ideal for wellness, lifestyle, and creative brands.",
+      "style": "soft",
+      "tags": ["pastel", "soft", "calm", "gentle", "feminine", "wellness", "elegant"],
+      "preview": {
+        "base": "#faf9f7",
+        "contrast": "#2d3748",
+        "primary": "#7c9eb2"
+      },
+      "fonts": {
+        "heading": "Playfair Display",
+        "body": "DM Sans"
+      }
+    },
+    {
+      "id": "corporate",
+      "name": "Corporate Blue",
+      "description": "Professional and trustworthy blue theme. Perfect for business, finance, SaaS, and enterprise companies.",
+      "style": "corporate",
+      "tags": ["professional", "business", "blue", "corporate", "trustworthy", "saas", "enterprise"],
+      "preview": {
+        "base": "#ffffff",
+        "contrast": "#1e293b",
+        "primary": "#0066cc"
+      },
+      "fonts": {
+        "heading": "Inter",
+        "body": "Inter"
+      }
+    },
+    {
+      "id": "minimal",
+      "name": "Minimal Black",
+      "description": "Clean black and white design with system fonts. Timeless, fast-loading, and works for any industry.",
+      "style": "minimal",
+      "tags": ["minimal", "clean", "black-white", "simple", "timeless", "fast", "universal"],
+      "preview": {
+        "base": "#ffffff",
+        "contrast": "#1a1a1a",
+        "primary": "#000000"
+      },
+      "fonts": {
+        "heading": "System Sans",
+        "body": "System Sans"
+      }
+    }
+  ]
+}

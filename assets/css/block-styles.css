@@ -1,0 +1,66 @@
+/**
+ * KO Base - Custom Block Styles
+ */
+
+/* Group: Shadow */
+.wp-block-group.is-style-shadow {
+    box-shadow: var(--wp--preset--shadow--md);
+    border-radius: var(--wp--custom--border-radius--lg);
+}
+
+/* Group: Border */
+.wp-block-group.is-style-border {
+    border: 1px solid var(--wp--preset--color--gray-200);
+    border-radius: var(--wp--custom--border-radius--lg);
+}
+
+/* Group: Full Height */
+.wp-block-group.is-style-full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Columns: Reverse on Mobile */
+@media (max-width: 781px) {
+    .wp-block-columns.is-style-reverse {
+        flex-direction: column-reverse;
+    }
+}
+
+/* Button: Outline (already in theme.json, but ensure consistency) */
+.wp-block-button.is-style-outline .wp-block-button__link {
+    border: 1px solid currentColor;
+    background-color: transparent;
+}
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+    background-color: var(--wp--preset--color--contrast);
+    color: var(--wp--preset--color--base);
+    border-color: var(--wp--preset--color--contrast);
+}
+
+/* Image: Shadow */
+.wp-block-image.is-style-shadow img {
+    box-shadow: var(--wp--preset--shadow--lg);
+}
+
+/* Image: Rounded */
+.wp-block-image.is-style-rounded img {
+    border-radius: var(--wp--custom--border-radius--2xl);
+}
+
+/* List: No Bullets */
+.wp-block-list.is-style-no-disc {
+    list-style: none;
+    padding-left: 0;
+}
+.wp-block-list.is-style-no-disc li {
+    padding-left: 0;
+}
+
+/* Cover: Rounded */
+.wp-block-cover.is-style-rounded {
+    border-radius: var(--wp--custom--border-radius--xl);
+    overflow: hidden;
+}

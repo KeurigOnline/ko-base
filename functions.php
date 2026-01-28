@@ -179,3 +179,102 @@ add_action('wp_enqueue_scripts', function() {
         );
     }
 });
+
+/**
+ * Load CSS for blocks separately for better performance.
+ */
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
+/**
+ * Register custom block styles.
+ */
+add_action( 'init', function() {
+    // Group styles
+    register_block_style( 'core/group', [
+        'name'  => 'shadow',
+        'label' => __( 'Shadow', 'ko-base' ),
+    ] );
+    register_block_style( 'core/group', [
+        'name'  => 'border',
+        'label' => __( 'Border', 'ko-base' ),
+    ] );
+    register_block_style( 'core/group', [
+        'name'  => 'full-height',
+        'label' => __( 'Full Height', 'ko-base' ),
+    ] );
+
+    // Columns styles
+    register_block_style( 'core/columns', [
+        'name'  => 'reverse',
+        'label' => __( 'Reverse on Mobile', 'ko-base' ),
+    ] );
+
+    // Button styles
+    register_block_style( 'core/button', [
+        'name'  => 'outline',
+        'label' => __( 'Outline', 'ko-base' ),
+    ] );
+
+    // Image styles
+    register_block_style( 'core/image', [
+        'name'  => 'shadow',
+        'label' => __( 'Shadow', 'ko-base' ),
+    ] );
+    register_block_style( 'core/image', [
+        'name'  => 'rounded',
+        'label' => __( 'Rounded', 'ko-base' ),
+    ] );
+
+    // List styles
+    register_block_style( 'core/list', [
+        'name'  => 'no-disc',
+        'label' => __( 'No Bullets', 'ko-base' ),
+    ] );
+
+    // Cover styles
+    register_block_style( 'core/cover', [
+        'name'  => 'rounded',
+        'label' => __( 'Rounded', 'ko-base' ),
+    ] );
+} );
+
+/**
+ * Register pattern categories.
+ */
+add_action( 'init', function() {
+    register_block_pattern_category( 'ko-heroes', [
+        'label' => __( 'Heroes', 'ko-base' ),
+    ] );
+    register_block_pattern_category( 'ko-sections', [
+        'label' => __( 'Sections', 'ko-base' ),
+    ] );
+    register_block_pattern_category( 'ko-cta', [
+        'label' => __( 'Call to Action', 'ko-base' ),
+    ] );
+} );
+
+/**
+ * Enqueue block styles CSS.
+ */
+add_action( 'wp_enqueue_scripts', function() {
+    $css = get_template_directory() . '/assets/css/block-styles.css';
+    if ( file_exists( $css ) ) {
+        wp_enqueue_style(
+            'ko-block-styles',
+            get_template_directory_uri() . '/assets/css/block-styles.css',
+            [],
+            filemtime( $css )
+        );
+    }
+} );
+add_action( 'enqueue_block_editor_assets', function() {
+    $css = get_template_directory() . '/assets/css/block-styles.css';
+    if ( file_exists( $css ) ) {
+        wp_enqueue_style(
+            'ko-block-styles-editor',
+            get_template_directory_uri() . '/assets/css/block-styles.css',
+            [],
+            filemtime( $css )
+        );
+    }
+} );
