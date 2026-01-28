@@ -18,6 +18,9 @@
                 { "slug": "secondary", "color": "#525252", "name": "Secondary" },
                 { "slug": "tertiary", "color": "#737373", "name": "Tertiary" },
                 { "slug": "muted", "color": "#a3a3a3", "name": "Muted" },
+                { "slug": "accent", "color": "#ff6b6b", "name": "Accent" },
+                { "slug": "surface", "color": "#fafafa", "name": "Surface" },
+                { "slug": "surface-alt", "color": "#f5f5f5", "name": "Surface Alt" },
                 { "slug": "accent-blue", "color": "#93c5fd", "name": "Accent Blue" },
                 { "slug": "accent-blue-light", "color": "#dbeafe", "name": "Accent Blue Light" },
                 { "slug": "accent-green", "color": "#00d492", "name": "Accent Green" },
@@ -43,6 +46,26 @@
                     "slug": "light-to-white",
                     "name": "Light to White",
                     "gradient": "linear-gradient(180deg, var(--wp--preset--color--gray-50) 0%, var(--wp--preset--color--base) 100%)"
+                },
+                {
+                    "slug": "primary-fade",
+                    "name": "Primary Fade",
+                    "gradient": "linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--accent) 100%)"
+                },
+                {
+                    "slug": "dark-overlay",
+                    "name": "Dark Overlay",
+                    "gradient": "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%)"
+                },
+                {
+                    "slug": "light-overlay",
+                    "name": "Light Overlay",
+                    "gradient": "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%)"
+                },
+                {
+                    "slug": "surface-fade",
+                    "name": "Surface Fade",
+                    "gradient": "linear-gradient(180deg, var(--wp--preset--color--base) 0%, var(--wp--preset--color--surface) 100%)"
                 }
             ]
         },
