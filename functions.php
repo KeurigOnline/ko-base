@@ -293,3 +293,15 @@ add_action( 'wp_enqueue_scripts', function() {
         );
     }
 } );
+
+/**
+ * Allow iframe embedding when ko_preview is active.
+ */
+add_action( 'send_headers', function() {
+    if ( isset( $_GET['ko_preview'] ) && $_GET['ko_preview'] === 'true' ) {
+        // Remove X-Frame-Options
+        header_remove( 'X-Frame-Options' );
+        // Allow framing from your ko-chat domain
+        header( 'Content-Security-Policy: frame-ancestors http://94.124.95.36:3000 https://94.124.95.36:3000' );
+    }
+} );
