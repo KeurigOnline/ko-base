@@ -278,3 +278,18 @@ add_action( 'enqueue_block_editor_assets', function() {
         );
     }
 } );
+
+/**
+ * Enqueue preview receiver script when ko_preview query param is present.
+ */
+add_action( 'wp_enqueue_scripts', function() {
+    if ( isset( $_GET['ko_preview'] ) && $_GET['ko_preview'] === 'true' ) {
+        wp_enqueue_script(
+            'ko-preview-receiver',
+            get_template_directory_uri() . '/assets/js/receiver.js',
+            [],
+            filemtime( get_template_directory() . '/assets/js/receiver.js' ),
+            true
+        );
+    }
+} );
